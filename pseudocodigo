@@ -1,0 +1,12 @@
+/* Algoritmo CalcularMediaAlumnos 
+LEER Nota1 
+    LEER Nota2 
+    LEER Nota3 
+    media = (Nota1+Nota2+Nota3)/3 
+    SI MEDIA >= 6 ENTONCES 
+        IMPRIME “Aprobado” 
+    SINO 
+        IMPRIME “Reprobado” 
+FIN-SI 
+IMPRIME el valor de la media 
+Fin-Algoritmo CalcularMediaAlumnos */

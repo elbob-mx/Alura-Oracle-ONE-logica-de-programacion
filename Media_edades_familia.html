@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media de edades en familia</title>
+
+    <style>
+      body {
+        background-color: #d5f3eb;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        color: black;
+        letter-spacing: -1px;
+      }
+
+      h3 {
+        font-family: sans-serif;
+        color: black;
+      }
+
+      p {
+        font-family: monospace;
+        color: black;
+      }
+
+      i {
+        color: orangered;
+      }
+
+      hr {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>
+      Media de <br />edades en<br />
+      una familia
+    </h1>
+    <hr />
+
+    <script>
+      // funciones --------------->
+
+      function saltarLinea() {
+        document.write("<br>");
+      }
+
+      function print(texto) {
+        document.write(texto);
+        saltarLinea();
+      }
+
+      // variables ---------------->
+
+      // let edadPadre = 35;
+      // let edadMadre = 35;
+      // let edadHija1 = 14;
+      // let edadHija2 = 9;
+
+      let cantidadMiembros = parseInt(
+        prompt("Por favor introduce cuantos integrantes hay en tu familia")
+      );
+      let contador = 1;
+      let totalEdades = 0;
+
+      // programa ---------------->
+
+      while (contador <= cantidadMiembros) {
+        edad = parseInt(prompt("Por favor, introduce la edad de tu familiar"));
+        totalEdades = totalEdades + edad;
+        contador++;
+      }
+
+      mediaEdades = totalEdades / cantidadMiembros;
+      print(
+        "<p>La media de edades en tu familia es de: <i><b>" +
+          Math.floor(mediaEdades) +
+          "</i></b></p>"
+      );
+      saltarLinea;
+      print("<p>Gracias.</p>");
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Puedo conducir?</title>
+    <style>
+
+        body {
+            background-color: #b7ccdf;
+        }
+
+        p {
+            font-family: monospace;
+        }
+
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 3rem;
+            text-align: center;
+            padding-top: 300px;
+        }
+
+        footer {
+            font-family: monospace;
+            text-align: center;
+            font-size: large;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+    
+    // funciones:------------------>
+
+      function saltarLinea() {
+        document.write("<br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+    // variables ------------------>
+
+        let nombreUsuario= "";   
+        while (!nombreUsuario || !isNaN(nombreUsuario)){
+            nombreUsuario = prompt("Por favor, ¿cuál es tu nombre?");
+            if (nombreUsuario == "" || !isNaN(nombreUsuario)) {alert("Sólo texto por favor ;)");
+            }
+        } 
+
+        let edadUsuario = null;
+        while(edadUsuario == null || isNaN(edadUsuario)) {
+            edadUsuario = prompt("Por favor, ¿cuál es tu edad?");
+            if (edadUsuario == null || isNaN(edadUsuario)) {alert("Sólo números por favor ;)")
+            }
+        }
+
+        let licenciaUsuario = "";
+        while(!licenciaUsuario || !isNaN(licenciaUsuario)){
+            licenciaUsuario = prompt("¿Cuentas con licencia para conducir?");
+            if (licenciaUsuario == "" || !isNaN(licenciaUsuario)) {alert("Por favor, responde solamente con un 'si' o un 'no'");
+        }
+    }
+    
+    let licenciaRegex = /si|claro/gi;
+    let result = licenciaRegex.test(licenciaUsuario);
+    
+
+    // ¿puedo conducir? ------------------>
+
+        if (edadUsuario >= 18 && result == true) {
+            imprimir("<h1>Adelante " + nombreUsuario + ", puedes conducir con cuidado.</h1>");
+        }
+        
+        if (edadUsuario >= 18 && result == false) {
+            imprimir("<h1>A pesar de su edad, carece de licencia y no puede conducir sin ella.<br>Diríjase al departamento de vialidad para solicitar una.</h1>");
+        }
+
+        if (edadUsuario < 18 && result == false|true) {
+            imprimir("<h1>Siendo menor de edad, no tiene aún permiso para conducir.</h1>"
+            );
+        }
+
+    </script>
+
+    <footer>
+        <b>Maneje con precaución. Respete al peatón.</b><br>
+        Este test no tiene validez de ningún tipo. Lección Alura ORACLE ONE. enero 2022.
+    </footer>
+</body>
+</html>

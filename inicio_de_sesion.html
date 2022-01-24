@@ -1,0 +1,40 @@
+<meta charset="UTF-8"><head>
+    <style>
+
+        body{
+            background-color: black;
+        }
+        h1 {
+            font-family: monospace;
+            color: greenyellow;
+            text-align: center;
+            padding-top: 300px;
+            font-size: 1rem;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<h1>Hola Sr. Anderson</h1>
+<script>
+// variables =>
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+    intentos = 3;
+    contador = 1;
+
+// programa =>
+    while(contador <= intentos) {
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+    var contrasenhaIngresada = prompt("Ingrese su contraseña");
+
+    if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+        alert("Bienvenido al sistema " + inicioDeSesionIngresado); break;
+    } else {
+        alert("inicio de sesión inválido. Favor intente de nuevo");
+    }
+    contador++;
+}
+
+</script>
+</body>

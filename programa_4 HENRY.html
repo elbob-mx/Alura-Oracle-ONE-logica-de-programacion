@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+
+<h1>PROGRAMA</h1>
+
+<script type="text/javascript">
+
+    //Función para insertar saltos de línea
+    function SaltarLinea(){
+        document.write("<br>");
+        document.write("<br>");    
+
+    }
+
+    //Función para imprimir nombre y edad de una persona, se recibe como argumento el nombre y la edad
+    function imprimir(nombre, edad){
+        document.write(nombre + " tiene " + edad + " años " )
+            SaltarLinea()
+    }
+
+    var anio = 2021;
+
+    imprimir("Henry", (anio-1987))
+
+    imprimir("Alejandro",(anio - 2011));
+
+    imprimir("Fernando", (anio-1959));
+
+</script>

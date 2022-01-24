@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMPRIMIR EDADES / 2</title>
+    <style>
+        body {
+            background-color: lightgray; 
+        }
+        
+        h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        
+        p {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <script>
+
+      function saltarLinea() {
+        document.write("<big><br><br><br><hr><br><br></big>");
+
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+      
+      var anho = 2025;
+      imprimir("<h1>hola amigos</h1>");
+      // este código calcula las edades de Juan, Pedro y Carlos
+      imprimir("<p>Juan tiene: " + (anho - 2000) + " años</p>");
+      imprimir("<p>Pedro tiene: " + (anho - 1995) + " años</p>");
+
+      anho = 2030;
+      imprimir("<p>Carlos tiene: " + (anho - 2005) + " años</p>");
+
+    </script>
+
+  </body>
+
+</html>

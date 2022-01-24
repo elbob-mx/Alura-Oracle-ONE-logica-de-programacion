@@ -1,0 +1,82 @@
+<meta charset="UTF-8" />
+<head>
+  <style>
+    body {
+      background-color: ghostwhite;
+    }
+
+    h1 {
+      font-family: monospace;
+      font-size: 3rem;
+      background-color: green;
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+    }
+
+    p {
+      font-family: monospace;
+      font-size: 1.5rem;
+    }
+
+    hr {
+      border-top: 1px dotted green;
+    }
+  </style>
+</head>
+
+<h1>PROGRAMA CÁLCULO IMC</h1>
+<hr />
+
+<script>
+  function saltarLinea() {
+    document.write("<br>");
+  }
+
+  function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+  }
+
+  function calcularIMC(peso, altura, nombre) {
+    imc = peso / altura ** 2;
+    imcCompleto = imc.toFixed(2);
+    imprimir(
+      "<p><b>El IMC calculado de <i>" +
+        nombre +
+        "</i> es de: </b><i>" +
+        imcCompleto +
+        "</i></p>");
+  }
+
+  // <=== comienza programa de cálculo IMC ==================================>
+  //   pesoRoberto = 83;
+  //   alturaRoberto = 1.82;
+  //   // imcRoberto = pesoRoberto / (alturaRoberto ** 2);
+  //   imcRoberto = calcularIMC(pesoRoberto, alturaRoberto);
+  //   imcDecimales = imcRoberto.toFixed(2);
+  //   // imprimir("<p><b>El IMC de Roberto es: </b>" + imcDecimales + "</p>");
+
+  //   imprimir("<p><b>el peso de Roberto es de: </b>" + pesoRoberto + " kg</p>");
+  //   imprimir("<p><b>La altura de Roberto es de: </b>" + alturaRoberto + " m</p>");
+  //   imprimir("<p><b>El IMC de Roberto es: </b>" + imcDecimales + "</p>");
+
+
+  // <=== comienza cálculo de IMC CON FUNCIÓN ====================================>
+  calcularIMC(83, 1.82, "Roberto");
+
+  //   <=== otro usuario =======================================>
+  //   pesoGustavo = 121;
+  //   alturaGustavo = 1.81;
+  //   //   imcGustavo = pesoGustavo / alturaGustavo ** 2;
+  //   imcGustavo = calcularIMC(pesoGustavo, alturaGustavo);
+  //   imcDecimales = imcGustavo.toFixed(2);
+
+  //   imprimir("<p><b>el peso de Gustavo es de: </b>" + pesoGustavo + " kg</p>");
+  //   imprimir("<p><b>La altura de Gustavo es de: </b>" + alturaGustavo + " m</p>");
+  //   imprimir("<p><b>El IMC de Gustavo es: </b>" + imcDecimales + "</p>");
+
+  
+  // <=== otro usuario CON FUNCIÓN ====================================>
+  calcularIMC(121, 1.81, "Gustavo");
+</script>

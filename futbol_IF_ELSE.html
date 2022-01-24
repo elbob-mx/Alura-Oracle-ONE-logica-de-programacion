@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUNTUACIÓN LIGA GATOS FC</title>
+
+    <style>
+      body {
+        background-color: rgb(199, 255, 241);
+        margin: 50px;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        background-color: rgb(40, 221, 146);
+        border-radius: 10px;
+        padding: 20px;
+        color: rgb(16, 112, 59);
+      }
+
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        background-color: rgb(59, 160, 255);
+        color: white;
+        padding: 50px;
+        background-size: auto;
+      }
+
+      h3 {
+        font-family: monospace;
+        text-align: right;
+        color: gray;
+      }
+
+      h4 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: white;
+        background-color: rgb(255, 60, 0);
+        padding: 50px;
+      }
+
+      p {
+        font-family: monospace;
+        font-size: 1.5rem;
+      }
+
+      hr {
+        border: 1px dotted rgb(0, 66, 28);
+      }
+
+      i {
+        color: #ff3300;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>PUNTUACIÓN LIGA GATOS F.C.</h1>
+    <h3>victorias: 3 pts | empates: 1 pt</h3>
+
+    <hr />
+
+    <script>
+      // funciones:------------------>
+
+      function saltarLinea() {
+        document.write("<br><hr></hr>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      function puntos(victorias, empates) {
+        return parseInt(victorias * 3 + empates);
+      }
+
+      // variables--------------------->
+
+      let victorias = parseInt(
+        prompt("Por favor, introduce la cantidad de victorias durante la liga")
+      );
+
+      let empates = parseInt(
+        prompt("Por favor, introduce la cantidad de empates durante la liga")
+      );
+
+      let puntosAnioPasado = 28;
+
+      // calculadora puntos club------------->
+
+      puntosCalculados = puntos(victorias, empates);
+
+      imprimir(
+        "<p><b>Los puntos del club del año pasado fueron: </b><i>" +
+          puntosAnioPasado +
+          "</i></p>"
+      );
+      imprimir(
+        "<p><b>Los puntos del club actualmente son: </b><i>" +
+          puntosCalculados +
+          "</i></p>"
+      );
+
+      if (puntosCalculados > puntosAnioPasado) {
+        imprimir(
+          "<h2>El equipo está mejor que el año pasado. Continuemos así.</h2>"
+        );
+      }
+      if (puntosCalculados == puntosAnioPasado) {
+        imprimir(
+          "<h2>El equipo está igual que el año pasado. A trabajar.</h2>"
+        );
+      }
+      if (puntosCalculados < puntosAnioPasado) {
+        imprimir(
+          "<h4>El equipo está peor que el año pasado. ¿Qué está pasando?</h4>"
+        );
+      }
+      
+    </script>
+  </body>
+</html>

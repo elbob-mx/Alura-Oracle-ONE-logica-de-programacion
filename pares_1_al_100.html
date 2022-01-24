@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media de edades en familia</title>
+
+    <style>
+      body {
+        background-color: #b7ccdf;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        color: black;
+        letter-spacing: -1px;
+      }
+
+      h2 {
+        font-family: sans-serif;
+        color: black;
+      }
+
+      p {
+        font-family: monospace;
+        color: black;
+      }
+
+      i {
+        color: orangered;
+      }
+
+      hr {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Números<br />pares</h1>
+    <hr />
+
+    <script>
+      // funciones --------------->
+
+      function saltarLinea() {
+        document.write("<br>");
+      }
+
+      function print(texto) {
+        document.write(texto);
+        saltarLinea();
+      }
+
+      // variables ---------------->
+
+      let contador = 0;
+      let final = 100;
+
+      // programa ---------------->
+
+      while (contador <= final) {
+        print(contador);
+        contador = contador + 2;
+      }
+
+      print("<h2>Fin.</h2>");
+    </script>
+  </body>
+</html>

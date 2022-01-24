@@ -1,0 +1,38 @@
+<meta charset="UTF-8" />
+<head>
+  <style>
+    body {
+      background-color: rgb(140, 168, 172);
+    }
+
+    h1 {
+      font-family: monospace;
+    }
+
+    p {
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<h1>PROGRAMA</h1>
+<script>
+  function saltarLinea() {
+    document.write("<br><br><br>");
+  }
+
+  function imprimir(frase) {
+    document.write(frase);
+    saltarLinea();
+  }
+
+  // inicia programa que calcula edades
+  let anho = 2025;
+  imprimir("<b><p>Juan tiene :</b>" + (anho - 2000) + " años.");
+
+  imprimir("<b>Pedro tiene :</b>" + (anho - 1995) + " años.");
+
+  // nuevo valor para "anho"
+  anho = 2030;
+  imprimir("<b>Carlos tiene :</b>" + (anho - 2005) + " años.</p>");
+</script>

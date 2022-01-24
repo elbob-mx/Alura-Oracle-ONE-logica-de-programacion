@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora IMC II</title>
+    <style>
+
+      body {
+        background-color: #bbffee;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        background-color: #11e4af;
+        border-radius: 10px;
+        padding: 20px;
+        color: #bd2095;
+      }
+
+      p {
+        font-family: monospace;
+        font-size: 1.5rem;
+      }
+
+      hr {
+        border: 1px dotted #10ad86;
+      }
+
+      i {
+        color: #bd2095;
+        font-weight: 700;
+      }
+
+    </style>
+  </head>
+
+  <h1>PROGRAMA CÁLCULO IMC</h1>
+  <hr />
+
+  <script>
+    function saltarLinea() {
+      document.write("<br><hr></hr>");
+    }
+
+    function imprimir(frase) {
+      document.write(frase);
+      saltarLinea();
+    }
+
+    function calcularIMC(peso, altura) {
+      imc = peso / (altura ** 2).toFixed(2);
+      return imc;
+    }
+
+    let imcDana = calcularIMC(40, 1.43);
+    let imcLaura = calcularIMC(65, 1.72);
+    let imcLaisa = calcularIMC(34, 1.28);
+    let imcRoberto = calcularIMC(83, 1.82);
+    
+    let imcPromedioGral = ((imcDana + imcLaura + imcLaisa + imcRoberto) / 4).toFixed(2);
+
+    imprimir("<p><b>El promedio de <i>IMC</i> de Laura, Dana, Laisa y Roberto es de: </b><i>" + ((imcDana + imcLaura + imcLaisa + imcRoberto) / 4).toFixed(2) + "</i></p>");
+
+    if (imcPromedioGral < 30.00) {
+        alert("¡Este es un grupo sano!")
+    }
+    else {
+        alert("A hacer más ejercicio...")
+    }
+
+  </script>
+</html>

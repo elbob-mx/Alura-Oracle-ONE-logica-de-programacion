@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculo_consumo</title>
+    <style>
+
+        body {
+            background-color: #FFD3B5;
+        }
+
+        h3 {
+            font-family: 'Courier New', Courier, monospace;
+            color: blue;
+        }
+
+        p {
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>¿Alcohol o gasolina?</h3>
+
+<script>
+
+    /* 3.- Problema: Si un carro tiene un tanque de 40 litros.
+    Usando gasolina y consumiendo todo el tanque se hace un camino de 480 kilómetros.
+    ¿Cuál es el consumo de gasolina?
+    Para calcular el consumo: divide la distancia recorrida por la cantidad de litros gastados.
+    Imprime el valor utilizando document.write. Organiza las cuentas en variables. */
+
+    let capacidadTanque= 40;
+    let recorridoConGas= 480;
+
+    let consumoGas= recorridoConGas / capacidadTanque;
+    console.log(consumoGas);
+    
+    document.write("<p>Un carro tiene un tanque de 40 litros.<br>Usando gasolina y consumiendo todo el tanque se hace un camino de 480 kilómetros.<br><br>¿Cuál es el consumo de gasolina?</p>");
+
+    document.write("<br>");
+
+    document.write("<p><b><u>- " + "El consumo de gasolina por kilometro es de: " + consumoGas + " l/km</u></b></p>");
+    document.write("<br>");
+    document.write("<br>");
+
+
+    let recorridoConAlcohol= 300;
+
+    let consumoAlcohol= recorridoConAlcohol / capacidadTanque;
+    console.log(consumoAlcohol);
+    document.write("<br>");
+    document.write("Por otro lado, con el alcohol: el mismo tanque de 40 litros hace un recorrido de 300 kilómetros.<br><br>¿Cuál es el consumo de alcohol/km?");
+    document.write("<br>");
+    document.write("<p><b><u>- " + "El consumo de alcohol por kilometro es de: " + consumoAlcohol + " l/km</u></b></p>");
+
+</script>
+
+</body>
+</html>

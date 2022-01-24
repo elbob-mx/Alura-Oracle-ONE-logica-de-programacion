@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora IMC IV</title>
+
+    <style>
+      body {
+        background-color: rgb(199, 255, 241);
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        background-color: rgb(40, 221, 146);
+        border-radius: 10px;
+        padding: 20px;
+        color: rgb(16, 112, 59);
+      }
+
+      p {
+        font-family: monospace;
+        font-size: 1.5rem;
+      }
+
+      hr {
+        border: 1px dotted rgb(0, 66, 28);
+      }
+
+      i {
+        color: #000000;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>PROGRAMA CÁLCULO IMC</h1>
+    <hr />
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><hr></hr>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      function calcularIMC(peso, altura) {
+        return peso / (altura ** 2).toFixed(2);
+      }
+
+      nombre = prompt("Escribe tu nombre");
+      pesoDeclarado = prompt(nombre + ", escribe tu peso (sólo números)");
+      alturaDeclarada = prompt(nombre + ", escribe tu altura (sólo números)");
+
+      imcCalculado = calcularIMC(pesoDeclarado, alturaDeclarada).toFixed(2);
+
+      imprimir(
+        "<p><b>" + nombre + "</b>, tú IMC es: <i>" + imcCalculado + "</i></p>"
+      );
+      //   imprimir (nombre + ", tú IMC es: " + imcCalculado);
+
+      if (imcCalculado > 24.99) {
+        alert("Hay que hacer ejercicio, por favor.");
+      } else alert("El IMC está en niveles sanos.");
+    </script>
+  </body>
+</html>

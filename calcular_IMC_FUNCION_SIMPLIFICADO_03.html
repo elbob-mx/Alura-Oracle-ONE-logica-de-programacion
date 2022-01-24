@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora IMC III</title>
+
+    <style>
+
+      body {
+        background-color: beige;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 3rem;
+        background-color: #d69825;
+        border-radius: 10px;
+        padding: 20px;
+        color: #5c4417;
+      }
+
+      p {
+        font-family: monospace;
+        font-size: 1.5rem;
+      }
+
+      hr {
+        border: 1px dotted #ad7b10;
+      }
+
+      i {
+        color: #bd6720;
+        font-weight: 700;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <h1>PROGRAMA CÁLCULO IMC</h1>
+    <hr />
+
+    <script>
+      function saltarLinea() {
+        document.write("<br><hr></hr>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      function calcularIMC(peso, altura) {
+        return peso / (altura ** 2).toFixed(2);
+      }
+
+      imprimir(
+        "<p><b>El promedio de <i>IMC</i> de Laura, Laisa, Dana y Roberto es de: </b><i>" +
+          (
+            (calcularIMC(65, 1.72) +
+              calcularIMC(34, 1.26) +
+              calcularIMC(43, 1.63) +
+              calcularIMC(85, 1.82)) /
+            4
+          ).toFixed(2) +
+          "</i></p>"
+      );
+
+      imprimir(
+        "<p><b>El promedio de <i>IMC</i> de Oscar, Gema, Santiago y Valeria es de: </b><i>" +
+          (
+            (calcularIMC(80, 1.82) +
+              calcularIMC(65, 1.68) +
+              calcularIMC(65, 1.72) +
+              calcularIMC(70, 1.58)) /
+            4
+          ).toFixed(2) +
+          "</i></p>"
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+let numeroAdivinar = sortea(20);
+
+
+function saltoLinea() {
+    document.write('<br>');
+}
+
+function imprimir(texto) {
+    document.write(texto);
+    saltoLinea();
+}
+
+function sortea(numRandom) {
+    return Math.round(Math.random() * numRandom);
+}
+
+//menor que "<", mayor que ">"
+
+let intentos = 3;
+let contador = 1;
+
+while (contador <= intentos) {
+    var num = parseInt(prompt('Ingresa un numero entre 0 - 20:')); //var se debe usar si se quiere que la variable este de forma global y aun estando dentro de un while o for se pueda hacer uso de ella donde sea.
+
+    if (num === numeroAdivinar) {
+        alert('Muy bien acertaste al numero sorteado!! :)');
+        break;
+    } else {
+        if (num < numeroAdivinar) {
+            alert(
+                `Estuviste cerca pero tu numero fue menor al numero sorteado`
+            );
+        } else if (num > numeroAdivinar) {
+            alert(
+                `Estuviste cerca pero tu numero fue mayor al numero sorteado`
+            );
+        }
+    }
+
+    contador++;
+}
+
+if (num === numeroAdivinar) {
+    imprimir(
+        `Muy bien acertaste, en el intento ${contador} y el numero era ${numeroAdivinar}`
+    );
+} else {
+    imprimir(`Estuviste cerca pero numero era: ${numeroAdivinar}`);
+}

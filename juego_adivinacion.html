@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivina el número</title>
+
+    <style>
+      body {
+        background-color: lightgray;
+      }
+
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 6rem;
+        padding: 3px;
+        color: black;
+        letter-spacing: 15px;
+        text-align: center;
+        font-weight: 200;
+      }
+
+      p {
+        font-family: sans-serif;
+        padding-top: 30px;
+        font-size: 2rem;
+        text-align: center;
+        color: black;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>ADIVINA...</h1>
+    <hr />
+
+    <script>
+      // funciones --------------->
+      function saltarLinea() {
+        document.write("<br>");
+      }
+
+      function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+      }
+
+      // variables --------------->
+      let numeroSecreto = Math.round(Math.random() * 10);
+      let intentos = 3;
+      let contador = 1;
+
+      // programa --------------->
+      while (contador <= intentos) {
+        var numeroUsuario = parseInt(
+          prompt(
+            "¿Andas clarividente?, intenta adivinar el número secreto entre 0 y 10. Suerte."
+          )
+        );
+
+        if (numeroSecreto == numeroUsuario) {
+          alert(
+            "¡Oigan todos, aquí al intento " +
+              contador +
+              " supo que el número era el " +
+              numeroSecreto +
+              "!"
+          );
+          break;
+        } else {
+          alert("No realmente. Sigue intentando.");
+        }
+
+        contador++;
+      }
+
+      if (numeroSecreto == numeroUsuario) {
+        imprimir(
+          "<p>¡Supo el número secreto en el intento " +
+            contador +
+            ", el número era el " +
+            numeroSecreto +
+            " ¡felicidades!</p>"
+        );
+      } else {
+        imprimir(
+          "<p>El número secreto era el " +
+            numeroSecreto +
+            ", ¿quiere intentar de nuevo?, presione F5.</p>"
+        );
+      }
+
+      imprimir("<p>FIN</p>");
+    </script>
+  </body>
+</html>
