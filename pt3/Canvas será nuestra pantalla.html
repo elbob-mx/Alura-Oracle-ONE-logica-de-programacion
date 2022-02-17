@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas / PT 1</title>
+  </head>
+
+  <body>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+      var screen = document.querySelector("canvas");
+      var brush = screen.getContext("2d");
+
+      brush.fillStyle = "darkgreen"
+      brush.fillRect(0,0,800,600);
+
+      brush.fillStyle = "white"
+      brush.fillRect(200,0,200,400);
+
+      brush.fillStyle = "tomato"
+      brush.fillRect(400,0,200,400);
+    </script>
+
+  </body>
+</html>
