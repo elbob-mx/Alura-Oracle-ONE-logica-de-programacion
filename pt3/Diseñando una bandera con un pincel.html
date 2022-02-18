@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas / PT 1</title>
+  </head>
+
+  <body>
+    <canvas width="600" height="400"> </canvas>
+
+    <script>
+      var screen = document.querySelector("canvas");
+      var brush = screen.getContext("2d");
+
+      brush.fillStyle = "#243333";
+      brush.fillRect(0,0,800,600);
+
+      
+      brush.fillStyle = "#243333";
+      brush.fillRect(400,0,200,400);
+
+      
+      brush.fillStyle = "black";
+      brush.beginPath();
+      brush.moveTo(300, 200);
+      brush.lineTo(0, 400);
+      brush.lineTo(600, 400);
+      brush.lineTo(0, 0);
+      brush.lineTo(600, 0);
+      brush.fill();
+      
+      brush.fillStyle = "#1a2121";
+      brush.fillRect(200,133.33,200,133.33);
+
+      brush.fillStyle = "DarkSlateGrey";
+      brush.fillRect(220, 155, 50, 80);
+      brush.fillRect(220, 300, 50, 100);
+      brush.beginPath();
+      brush.fillStyle = "DarkSlateGrey";
+      brush.moveTo(170, 400);
+      brush.lineTo(220, 300);
+      brush.lineTo(300, 600);
+      brush.fill();
+
+    </script>
+
+  </body>
+</html>
