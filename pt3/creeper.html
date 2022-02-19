@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <style>
+    body {
+      background-color: #E5E5DB;
+      text-align: center;
+      justify-content: center;
+      margin: 40px;
+    }
+    
+    h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #18130E; /* vintage black */
+      margin: 40px;
+    }
+
+    canvas{
+      justify-content: center;
+    }
+
+    </style>
+    
+<div>
+  <h2>MINECRAFT<br>creeper</h2>
+</div>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+  var screen = document.querySelector("canvas");
+  var brush = screen.getContext("2d");
+
+  brush.fillStyle = "darkgreen";
+  brush.fillRect(125, 50, 350, 300);
+
+  brush.fillStyle = "#199D48";
+  brush.fillRect(125, 50, 35, 30);
+
+  brush.fillStyle = "#96CE8A";
+  brush.fillRect(160, 50, 35, 30);
+  
+  brush.fillStyle = "#199D48";
+  brush.fillRect(195, 50, 35, 30);
+
+  brush.fillStyle = "#46A445";
+  brush.fillRect(230, 50, 35, 30);
+  
+</script>
+
+</body>
+</html>
