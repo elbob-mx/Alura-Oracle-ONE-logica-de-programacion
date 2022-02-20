@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas JS</title>
+  </head>
+
+  <body>
+    <canvas width="800" height="600"> </canvas>
+
+    <script>
+      
+      function drawSquare(x) {
+        
+        var screen = document.querySelector("canvas");
+        var brush = screen.getContext("2d");
+        
+        // grosor de línea borde
+        brush.lineWidth = 2;
+
+        // color y tamaño de borde y relleno
+        brush.fillStyle = "aqua";
+        brush.fillRect(x, 20, 20, 20);
+        brush.strokeStyle = "purple";
+        brush.strokeRect(x, 20, 20, 20);
+      }
+
+      drawSquare(20);
+      drawSquare(40);
+      drawSquare(60);
+      drawSquare(80);
+
+    </script>
+  </body>
+</html>
