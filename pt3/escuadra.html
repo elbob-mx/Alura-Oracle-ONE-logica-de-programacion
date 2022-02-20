@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESCUADRA / canvas</title>
+</head>
+<body>
+
+  <style>
+    body {
+      background-color: darksalmon;
+      text-align: center;
+      justify-content: center;
+      margin: 40px;
+    }
+    
+    h2 {
+      font-family: 'Press Start 2P', cursive;
+      color: #18130E; /* vintage black */
+      margin: 40px;
+    }
+
+    canvas{
+      justify-content: center;
+      border: 10px solid black;
+      box-shadow: 10px 10px #383836;
+    }
+
+    </style>
+    
+<div>
+  <h2>ESCUADRA</h2>
+</div>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+  var screen = document.querySelector("canvas");
+  var brush = screen.getContext("2d");
+
+  brush.fillStyle = "black";
+
+  brush.beginPath();
+  brush.moveTo(50, 50);
+  brush.lineTo(50, 350);
+  brush.lineTo(350,350);
+  brush.fill();
+
+  brush.fillStyle = "darksalmon";
+
+  brush.beginPath();
+  brush.moveTo(100, 175);
+  brush.lineTo(100, 300);
+  brush.lineTo(230,300);
+  brush.fill();
+
+  brush.fillStyle = "black";
+
+</script>
+
+</body>
+</html>
