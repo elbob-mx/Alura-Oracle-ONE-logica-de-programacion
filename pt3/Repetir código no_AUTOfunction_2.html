@@ -12,7 +12,7 @@
 
     <script>
       // obtener color random ------->
-      var colorList = [
+      const colorList = [
         "#ff48c4",
         "#2bd1fc",
         "#f3ea5f",
@@ -23,16 +23,16 @@
         "tomato",
       ];
 
-      var randomColor = colorList[Math.floor(Math.random() * colorList.length)];
+      var randomColor1 = colorList[Math.floor(Math.random() * colorList.length)];
+      var randomColor2 = colorList[Math.floor(Math.random() * colorList.length)];
+      var randomColor3 = colorList[Math.floor(Math.random() * colorList.length)];
 
       // funcion dibujar cuadro
       function drawSquare(x, y, randomColor, lineWidth, borderColor) {
         var screen = document.querySelector("canvas");
         var brush = screen.getContext("2d");
-
         // grosor de línea borde
         brush.lineWidth = lineWidth;
-
         // color y tamaño de borde y relleno
         brush.fillStyle = randomColor;
         brush.fillRect(x, y, 50, 50);
@@ -40,11 +40,14 @@
         brush.strokeRect(x, y, 50, 50);
       }
 
-      drawSquare(20, 20, randomColor, 2, "purple");
-      drawSquare(70, 30, randomColor, 2, "aqua");
-      drawSquare(120, 20, randomColor, 2, "purple");
-      drawSquare(170, 30, randomColor, 2, "aqua");
-      drawSquare(220, 20, randomColor, 2, "purple");
+      var x = 0;
+      while(x < 800) {
+        drawSquare(x, 20, randomColor1, 2, "white");
+        drawSquare(x, 70, randomColor2, 2, "white");
+        drawSquare(x, 120, randomColor3, 2, "white");
+        x = x + 50;
+      };
     </script>
+
   </body>
 </html>
