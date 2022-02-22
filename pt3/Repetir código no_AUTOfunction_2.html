@@ -8,26 +8,23 @@
   </head>
 
   <body>
-    <canvas width="800" height="600"> </canvas>
+
+    <canvas width="600" height="600"> </canvas>
+
+    <style>
+      canvas{
+        background-color: bisque;
+      }
+    </style>
 
     <script>
-      // obtener color random ------->
-      const colorList = [
-        "#ff48c4",
-        "#2bd1fc",
-        "#f3ea5f",
-        "#c04df9",
-        "#ff3f3",
-        "yellow",
-        "magenta",
-        "tomato",
-      ];
+      // OBTENER COLOR RANDOM DESDE ARRAY  ------->
+      const colorList = ["#7FC8A9", "#D5EEBB", "#5F7A61", "#444941"]; // botanic scheme
+      // const colorList = ["#1A1A40", "#270082", "#7A0BC0", "#FA58B6"]; // vice scheme
 
-      var randomColor1 = colorList[Math.floor(Math.random() * colorList.length)];
-      var randomColor2 = colorList[Math.floor(Math.random() * colorList.length)];
-      var randomColor3 = colorList[Math.floor(Math.random() * colorList.length)];
+      var randomColor = colorList[Math.floor(Math.random() * colorList.length)];
 
-      // funcion dibujar cuadro
+      // FUNCIÓN DIBUJAR CUADRO
       function drawSquare(x, y, randomColor, lineWidth, borderColor) {
         var screen = document.querySelector("canvas");
         var brush = screen.getContext("2d");
@@ -35,19 +32,31 @@
         brush.lineWidth = lineWidth;
         // color y tamaño de borde y relleno
         brush.fillStyle = randomColor;
-        brush.fillRect(x, y, 50, 50);
+        brush.fillRect(x, y, 25, 25*5);
         brush.strokeStyle = borderColor;
-        brush.strokeRect(x, y, 50, 50);
-      }
-
-      var x = 0;
-      while(x < 800) {
-        drawSquare(x, 20, randomColor1, 2, "white");
-        drawSquare(x, 70, randomColor2, 2, "white");
-        drawSquare(x, 120, randomColor3, 2, "white");
-        x = x + 50;
+        brush.strokeRect(x, y, 25, 25*5);
       };
-    </script>
 
+      // VARIABLES ---------->
+      var x = 0;
+      var y = 0;
+
+      // FUNCIÓN DIBUJAR CUADRICULADO --------->
+      while (x < 600, y < 600) {
+        randomColor = colorList[Math.floor(Math.random() * colorList.length)];
+        drawSquare(x, y, randomColor, 4, "white");
+        y = y + 25;
+        x = x + 25;
+      };
+
+      // while ((x < 800/*, y < 600*/)) {
+      //   randomColor = colorList[Math.floor(Math.random() * colorList.length)];
+      //   drawSquare(x, y, randomColor, 4, "white");
+      //   x = x + 50;
+      //   // y = y + 50;
+      // };
+
+
+    </script>
   </body>
 </html>
