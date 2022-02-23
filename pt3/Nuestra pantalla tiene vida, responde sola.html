@@ -8,25 +8,22 @@
   </head>
 
   <body>
-    <canvas width="800" height="400"></canvas>
+    <canvas width="800" height="400"> </canvas>
 
     <script>
+      
       function drawSquare(x) {
+        
         var screen = document.querySelector("canvas");
-        var brush = screen.getContext("2d");
-
+        var brush = screen.getContext("2d");        
         // grosor de línea borde
         brush.lineWidth = 2;
-
         // color y tamaño de borde y relleno
-        brush.fillStyle = "aqua";
-        brush.fillRect(x, 20, 20, 20);
+        brush.fillStyle = "black";
+        brush.fillRect(0, 0, 50, 50);
       }
 
-      drawSquare(20);
-      drawSquare(40);
-      drawSquare(60);
-      drawSquare(80);
+      drawSquare();
     </script>
   </body>
 </html>
