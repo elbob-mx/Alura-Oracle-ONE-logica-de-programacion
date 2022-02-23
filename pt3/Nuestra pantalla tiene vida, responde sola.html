@@ -11,19 +11,19 @@
     <canvas width="800" height="400"> </canvas>
 
     <script>
-      
-      function drawSquare(x) {
-        
+      // dibujar forma ------------->
+      function drawSquare(x) {        
         var screen = document.querySelector("canvas");
         var brush = screen.getContext("2d");        
         // grosor de línea borde
         brush.lineWidth = 2;
         // color y tamaño de borde y relleno
         brush.fillStyle = "black";
-        brush.fillRect(0, 0, 50, 50);
-      }
+        brush.fillRect(0, 0, 60, 30);
+      };
 
       drawSquare();
+
     </script>
   </body>
 </html>
