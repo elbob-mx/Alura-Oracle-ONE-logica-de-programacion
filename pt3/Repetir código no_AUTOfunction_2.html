@@ -23,11 +23,12 @@
       // const colorList = ["#1A1A40", "#270082", "#7A0BC0", "#FA58B6"]; // vice scheme
 
       var randomColor = colorList[Math.floor(Math.random() * colorList.length)];
-
+      
+      var screen = document.querySelector("canvas");
+      var brush = screen.getContext("2d");
+      
       // FUNCIÓN DIBUJAR CUADRO
       function drawSquare(x, y, randomColor, lineWidth, borderColor) {
-        var screen = document.querySelector("canvas");
-        var brush = screen.getContext("2d");
         // grosor de línea borde
         brush.lineWidth = lineWidth;
         // color y tamaño de borde y relleno
