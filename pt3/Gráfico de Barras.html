@@ -1,74 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Competencia de los navegadores</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Competencia de los navegadores</title>
+  </head>
+  <body>
+    <style>
+      body,
+      html {
+        background-color: #b2b4b2;
+        width: auto;
+        height: auto;
+      }
 
-<style>
-  body, html {
-    background-color: #B2B4B2;
-  }
-  
-  .header {
-    font-family: monospace;
-    color: #080808;
-    text-align: left;
-    margin: 50px;
-    font-size: 2vh;
-  }
-</style>
-  
-<div class="header">
-  <h1>¿Cuál es el navegador<br>más utilizado?</h1>
-  <hr>
-</div>
+      .header {
+        font-family: monospace;
+        color: black;
+        text-align: center;
+        margin: 50px;
+        font-size: 2vh;
+      }
 
-<!-- canvas -->
-<canvas> width="800" height="600"></canvas>
+      canvas {
+        background-color: lightgray;
+        border-radius: 10px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+    </style>
 
-<!-- script -->
-<script>
-// VARIABLES ------>
+    <div class="header">
+      <h1>¿Cuál es el navegador más utilizado?</h1>
+      <hr />
+    </div>
 
-// porcentajes:
-var serie2009 = [6, 47, 41, 3, 3];
-var serie2019 = [81, 9, 3, 3, 4];
+    <!-- canvas -->
+    <canvas width="600" height="400"></canvas>
 
-// colores:
-var colores = ["dodgerblue","lightseagreen","gold", "tomato","silver"];
-
-// FUNCIONES-------->
-    function dibujarRectangulo(x, y, base, altura, color) {
+    <!-- script -->
+    <script>
+      
+      // FUNCIONES-------->
+      function dibujarRectangulo(x, y, base, altura, color) {
         var pantalla = document.querySelector("canvas");
         var pincel = pantalla.getContext("2d");
 
-        pincel.fillStyle=color;
-        pincel.fillRect(x,y, base, altura);
-        pincel.strokeStyle="black";
-        pincel.strokeRect(x,y, base, altura);
-    }
+        pincel.fillStyle = color;
+        pincel.fillRect(x, y, base, altura);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x, y, base, altura);
+      };
 
-    function escribirTexto(x , y, texto) {
+      function escribirTexto(x, y, texto) {
         var pantalla = document.querySelector("canvas");
         var pincel = pantalla.getContext("2d");
 
-        pincel.font="15px monospace";
-        pincel.fillStyle="black";
-        pincel.fillText(texto, x, y);    
-    }
-
-    dibujarRectangulo(300, 300, 30, 100, );
-    escribirTexto();
-
-    dibujarBarra(50, 50, serie2009, colores, "2009");
-    dibujarBarra(150, 50, serie2019, colores, "2019");
-
-    //Aquí viene el texto faltante
-
-</script>
-
-</body>
+        pincel.font = "italic bold 15px monospace";
+        pincel.fillStyle = "black";
+        pincel.fillText(texto, x, y);
+      };
+      
+      function dibujarBarra(x, y, series, colores, texto) {
+        escribirTexto(x -12, y - 10, texto);
+        
+        var sumaAltura = 0;
+        for (var i = 0; i < series.length; i++) {
+          var altura = series[i];
+          dibujarRectangulo(x, y + sumaAltura, 100, altura, colores[i]);
+          sumaAltura = sumaAltura + altura;
+        }
+      };
+      
+      // VARIABLES -------->
+      var colores = ["dodgerblue", "lightseagreen", "gold", "tomato", "silver"];
+      var serie2009 = [18, 141, 123, 9, 9];
+      var serie2019 = [243, 27, 9, 9, 12];
+      
+      
+      // dibujar barras -------->
+      dibujarBarra(100, 50, serie2009, colores, "2009 : Firefox");
+      dibujarBarra(400, 50, serie2019, colores, "2019 : Chrome");
+      
+      </script>
+  </body>
 </html>
