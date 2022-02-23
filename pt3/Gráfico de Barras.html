@@ -9,25 +9,27 @@
 
 <style>
   body, html {
-    background-color: lightgray;
+    background-color: #B2B4B2;
   }
   
   .header {
     font-family: monospace;
-    color: indigo;
-    text-align: center;
+    color: #080808;
+    text-align: left;
     margin: 50px;
+    font-size: 2vh;
   }
 </style>
   
 <div class="header">
-  <h1>¿CUÁL ES EL NAVEGADOR MÁS UTILIZADO?</h1>
+  <h1>¿Cuál es el navegador<br>más utilizado?</h1>
+  <hr>
 </div>
 
-
-
+<!-- canvas -->
 <canvas> width="800" height="600"></canvas>
 
+<!-- script -->
 <script>
 // VARIABLES ------>
 
@@ -36,7 +38,7 @@ var serie2009 = [6, 47, 41, 3, 3];
 var serie2019 = [81, 9, 3, 3, 4];
 
 // colores:
-var colores = ["blue","green","yellow", "red","gray"];
+var colores = ["dodgerblue","lightseagreen","gold", "tomato","silver"];
 
 // FUNCIONES-------->
     function dibujarRectangulo(x, y, base, altura, color) {
