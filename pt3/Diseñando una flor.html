@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Competencia de los navegadores</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flower...</title>
+  </head>
+  <body>
 
-<style>
-  body, html {
-    background-color: lightgray;
-  }
-  
-  .header {
-    font-family: monospace;
-    color: indigo;
-    text-align: center;
-    margin: 50px;
-  }
-</style>
-  
-<div class="header">
-  <h1>¿CUÁL ES EL NAVEGADOR MÁS UTILIZADO?</h1>
-</div>
+    <style>
+      canvas{
+        border: 4px solid lightseagreen;
+        border-radius: 15px;
+      }
+    </style>
 
+    <canvas width="600" height="600"></canvas>
 
+    <script>
 
-<canvas> width="800" height="600"></canvas>
+      var pantalla = document.querySelector("canvas");
+      var pincel = pantalla.getContext("2d");
+      pincel.fillStyle = "bisque";
+      pincel.fillRect(0, 0, 600, 600);
 
-<script>
+      function dibujarCirculo(x, y, radio, color) {
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2 * 3.14);
+        pincel.fill();
+      }
 
-    function dibujarRectangulo(x, y, base, altura, color) {
-        var pantalla = document.querySelector("canvas");
-        var pincel = pantalla.getContext("2d");
-
-        pincel.fillStyle=color;
-        pincel.fillRect(x,y, base, altura);
-        pincel.strokeStyle="black";
-        pincel.strokeRect(x,y, base, altura);
-    }
-
-    function escribirTexto(x , y, texto) {
-        var pantalla = document.querySelector("canvas");
-        var pincel = pantalla.getContext("2d");
-
-        pincel.font="15px Georgia";
-        pincel.fillStyle="black";
-        pincel.fillText(texto, x, y);    
-    }
+      dibujarCirculo(312, 285, 30, "lightpink");
+      dibujarCirculo(287, 285, 30, "lightpink");
+      dibujarCirculo(312, 310, 30, "lightpink");
+      dibujarCirculo(287, 310, 30, "lightpink");
+      dibujarCirculo(300, 270, 25.0, "MediumOrchid");
+      dibujarCirculo(300, 330, 25.0, "MediumOrchid");
+      dibujarCirculo(270, 300, 25.0, "MediumOrchid");
+      dibujarCirculo(330, 300, 25.0, "MediumOrchid");
+      dibujarCirculo(300, 300, 25.0, "gold");
+      dibujarCirculo(300, 300, 6.0, "goldenrod");
 
 
-    //Aquí viene el texto faltante
-
-</script>
-
-</body>
+    </script>
+  </body>
 </html>
