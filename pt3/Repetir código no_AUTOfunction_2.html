@@ -33,9 +33,9 @@
         brush.lineWidth = lineWidth;
         // color y tamaño de borde y relleno
         brush.fillStyle = randomColor;
-        brush.fillRect(x, y, 25, 25*5);
+        brush.fillRect(x, y, 25, 25);
         brush.strokeStyle = borderColor;
-        brush.strokeRect(x, y, 25, 25*5);
+        brush.strokeRect(x, y, 25, 25);
       };
 
       // VARIABLES ---------->
@@ -43,20 +43,12 @@
       var y = 0;
 
       // FUNCIÓN DIBUJAR CUADRICULADO --------->
-      while (x < 600, y < 600) {
+      for (x = 0; x < 600; x + 25) {
         randomColor = colorList[Math.floor(Math.random() * colorList.length)];
         drawSquare(x, y, randomColor, 4, "white");
-        y = y + 25;
         x = x + 25;
+        y = y + 25;
       };
-
-      // while ((x < 800/*, y < 600*/)) {
-      //   randomColor = colorList[Math.floor(Math.random() * colorList.length)];
-      //   drawSquare(x, y, randomColor, 4, "white");
-      //   x = x + 50;
-      //   // y = y + 50;
-      // };
-
 
     </script>
   </body>
