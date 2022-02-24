@@ -24,7 +24,7 @@
         position: relative;
         width: 600;
         height: 400px;
-        border: 4px solid darkturquoise;
+        border: 4px solid orangered;
         border-radius: 15px;
       }
 
@@ -37,34 +37,40 @@
     <script>
       var screen = document.querySelector("canvas");
       var brush = screen.getContext("2d");
-      /* grosor de línea borde
-        brush.lineWidth = 2; */
 
       // color y tamaño de borde y relleno
-      brush.fillStyle = "darkslategray";
+      brush.fillStyle = "salmon";
       brush.fillRect(0, 0, 600, 400);
 
       // FUNCIONES ------------>
-      function escribirTexto(x, y, texto) {
-        var pantalla = document.querySelector("canvas");
-        var pincel = pantalla.getContext("2d");
+      function drawText(x, y, texto) {
+        var screen = document.querySelector("canvas");
+        var brush = screen.getContext("2d");
 
-        pincel.font = "italic bold 21px monospace";
-        pincel.fillStyle = "lightgray";
-        pincel.fillText(texto, x, y);
+        brush.font = "italic bold 21px monospace";
+        brush.fillStyle = "lightgray";
+        brush.fillText(texto, x, y);
       };
+      
+      function drawCircle(event) {
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
 
-      function alertaClick(event) {
-        var x = event.pageX;
-        var y = event.pageY;
+        brush.fillStyle = "lightsalmon";
+        brush.beginPath();
+        brush.arc(x, y, 10, 0, Math.PI*2);
+        brush.fill();
+        console.log(x + "," + y);
+        
+
         console.log(event);
-      alert("eh! buen click en las coodernadas ( x , y ): " + x + ", " + y);
       };
 
       // INTERACTIVOS --------------->
-      escribirTexto(200, 200, "venga! pícame!");
+      drawText(200, 200, "pícale! pícale!");
 
-      screen.onclick = alertaClick;
+      // screen.onclick = clickAlert;
+      screen.onclick = drawCircle;
 
     </script>
   </body>

@@ -1,0 +1,2 @@
+var aprendi = 1; // cambiar por 0, true, false, "", etc
+(aprendi ? alert("El instructor queda muy feliz") : alert("El instructor no va a desistir hasta que el alumno sea una eminencia en programación"));
