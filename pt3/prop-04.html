@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>moving</title>
+  </head>
+
+  <body>
+
+    <style>
+      body {
+        margin: 0;
+        background-color: black;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        height: 100vh;
+      }
+
+      #canvas-1 {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border: 5px dashed white;
+      }
+
+      .item {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5vw;
+        font-weight: 900;
+        margin: 10px;
+        color: white;
+      }
+
+      p {
+        font-size: 1.1vw;
+        margin: 30px;
+        color: white;
+      }
+    </style>
+    
+  </body>
+
+<div class="container">
+  <div class="item">
+
+    <h1 style="font-family: 'Courier New', Courier, monospace">
+    </h1>
+    <p style="font-family: monospace">
+      vamos, click secundario, no seas cobarde.
+    </p>
+
+  </div>
+  <canvas id="canvas-1" width="600" height="400"> </canvas>
+</div>
+
+<script>
+
+// VARIABLES --------------------------------------->
+  var screen = document.querySelector("canvas");
+  var brush = screen.getContext("2d");
+  brush.fillStyle = "black";
+  brush.fillRect(0, 0, 600, 400);
+  var colorArray = ["goldenrod", "beige", "tomato"];
+  var startColorIndex = 0;
+
+
+// FUNCIONES ------------------------------------------->
+  function createCircle(x, y, radio) {
+    brush.fillStyle = colorArray[startColorIndex]
+    brush.beginPath();
+    brush.arc(x, y, radio, 0, Math.PI*2);
+    brush.fill();
+  };
+
+  function clearCanvas() {
+    brush.clearRect(0, 0, 600, 400)
+  };
+
+  let x = 20;
+  let y = 20;
+  let radio = 1;
+
+  function updateCanvas() {
+    clearCanvas();
+    createCircle(x, y, radio);
+    x ++;
+    y ++;
+    radio ++;
+    brush.fillStyle = colorArray[startColorIndex]
+    danger();
+  };
+
+  function colorCycle() {
+    startColorIndex++;
+    // LOOP PARA CAMBIAR POR CLICK DESDE LA SECUENCIA 'COLORARRAY'
+    if (startColorIndex >= colorArray.length) {
+      startColorIndex = 0;
+    }
+    return false; /* EVITAR MENU CONTEXTUAL, EL CLASICO CLICK SENCUDARIO */
+  }
+
+  setInterval(updateCanvas, 50);
+  screen.oncontextmenu = colorCycle;
+
+  function danger() {
+  if (radio == 200) {
+    alert("oh no...");
+  }
+};
+
+
+</script>
+
+</html>
