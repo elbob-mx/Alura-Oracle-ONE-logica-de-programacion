@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>moving</title>
+  </head>
+
+  <body>
+    <style>
+      body {
+        margin: 0;
+        background-color: darkolivegreen;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        align-content: center;
+        height: 100vh;
+      }
+
+      #canvas-1 {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border:30px solid rgb(109, 50, 23);
+        border-radius: 20PX;
+      }
+
+      .item {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.5vw;
+        font-weight: 900;
+        margin: 10px;
+        color: black;
+      }
+
+      p {
+        font-size: 3vw;
+        margin: 20px;
+        color: black;
+        font-weight: 700;
+      }
+    </style>
+  </body>
+
+  <div class="container">
+    <div class="item">
+      <h1 style="font-family: 'Courier New', Courier, monospace"></h1>
+      <p style="font-family: monospace">
+        FÍSICA, LO ESTÁS HACIENDO MAL.
+      </p>
+    </div>
+    <canvas id="canvas-1" width="600" height="400"> </canvas>
+  </div>
+
+  <!-- ---------------------*************************------------------------------------- -->
+
+  <script>
+    // VARIABLES --------------------------------------->
+    var screen = document.querySelector("canvas");
+    var brush = screen.getContext("2d");
+    brush.fillStyle = "darkolivegreen";
+    brush.fillRect(0, 0, 600, 400);
+    var colorArray = ["cyan", "lightseagreen", "teal"];
+    var startColorIndex = 0;
+
+    // FUNCIONES ------------------------------------------->
+    function createCircle(x, y, radio) {
+      brush.fillStyle = "whitesmoke";
+      brush.beginPath();
+      brush.arc(x, y, radio, 0, Math.PI * 2);
+      brush.fill();
+    }
+
+    function clearCanvas() {
+      brush.clearRect(0, 0, 600, 400);
+    }
+
+    // VARIABLES --------------------->
+    // circle ------------>
+    var x = 300;
+    var y = 0;
+    var radio = 10;
+    // repeatCanvas param ---------->
+    var bottom = 390;
+    var top = 10;
+    var drop = true;
+    var value = 0;
+
+    // FUNCIÓN ANIMACIÓN --------------------->
+    function repeatCanvas() {
+      if (drop == true && y <= bottom) {
+        clearCanvas();
+        createCircle(x, y, radio);
+        value++;
+        y++;
+        console.log(y);
+        
+        if (value >= bottom+1) { 
+          clearCanvas();
+          createCircle(x, y = y-2, radio);
+          value-2;
+          x=x+0.3;
+          console.log(value);
+          console.log(y);
+          
+          if(drop == true && y <= 10) {
+            clearCanvas();
+            createCircle(x= x+1.2, y, radio);
+            value+2;
+            x= x+1.2;
+            y= y+5;
+            console.log(y + " <--- coodenada Y");
+            console.log(value + " <--- valor");
+          }
+        }
+      }
+    };
+
+    screen.oncontextmenu = noRightClick;
+    function noRightClick() {
+      return false; /* EVITAR MENU CONTEXTUAL, EL CLASICO CLICK SENCUDARIO */
+    }
+
+    setInterval(repeatCanvas,2); //aplicar función 'UPDATE CANVAS' y velocidad en 'ms'.
+  
+  </script>
+</html>
