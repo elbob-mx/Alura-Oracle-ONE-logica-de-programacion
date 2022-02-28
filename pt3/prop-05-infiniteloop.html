@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>moving</title>
+    <title>bounce!</title>
   </head>
 
   <body>
@@ -90,7 +90,7 @@
     var radio = 10;
     // repeatCanvas param ---------->
     var bottom = 390;
-    var top = 10;
+    var up = 9;
     var drop = true;
     var value = 0;
 
@@ -106,18 +106,16 @@
         if (value >= bottom+1) { 
           clearCanvas();
           createCircle(x, y = y-2, radio);
-          value-2;
           x=x+0.3;
-          console.log(value);
-          console.log(y);
+          console.log(y + " <--- coord 'Y'");
+          console.log(value + " <--- valor");
           
-          if(drop == true && y <= 10) {
+          if(y <= up) {
             clearCanvas();
-            createCircle(x= x+1.2, y, radio);
-            value+2;
-            x= x+1.2;
-            y= y+5;
-            console.log(y + " <--- coodenada Y");
+            createCircle(x, y, radio);
+            x= x+0.5;
+            y= y+10;
+            console.log(y + " <--- coord 'Y'");
             console.log(value + " <--- valor");
           }
         }
