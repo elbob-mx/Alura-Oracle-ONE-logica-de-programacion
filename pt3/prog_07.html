@@ -98,15 +98,32 @@
 
       function activateDraw() {
         draw = true;
-      }
+      };
 
       function deactivateDraw() {
         draw = false;
-      }
+      };
 
       screen.onmousedown = activateDraw;
 
       screen.onmouseup = deactivateDraw;
+
+      function pickColor(event) {
+      var x = event.pageX - screen.offsetLeft;
+      var y = event.pageY - screen.offsetTop;
+      
+      if((x <= 50) && (y <= 50))
+        {brush.fillStyle = "tomato"}; // cambiar a color 'tomato'
+
+      if ((x <= 50) && (y <= 100))
+        {brush.fillStyle = "lightseagreen"}; // cambiar a color 'lightseagreen'
+
+      if ((x <= 50) && (y <= 150))
+        {brush.fillStyle = "dodgerblue"}; // cambiar a color 'dodgerblue'
+    };
+  
+  screen.onclick = pickColor;
+
     </script>
   </body>
 </html>
