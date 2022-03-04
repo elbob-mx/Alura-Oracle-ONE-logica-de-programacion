@@ -8,13 +8,21 @@
       name="description"
       content="Ejercicio curso Alura LATAM Oracle ONE / 'Diseñando con el mouse'."
     />
-    <title>Click-O-Paint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chango&display=swap"
+      rel="stylesheet"
+    />
+    <title>Click-o-Paint</title>
   </head>
+
   <body>
     <style>
       body {
         margin: 20px;
         background-color: #9bceb5;
+        overflow: hidden;
       }
 
       .container {
@@ -30,7 +38,7 @@
         position: relative;
         width: 600px;
         height: 400px;
-        border: 4px solid #313d26;
+        /* border: 4px solid black; */
         border-radius: 5px;
       }
 
@@ -45,11 +53,15 @@
         color: black;
       }
 
-      p {
+      h4 {
         font-family: sans-serif;
+      }
+
+      p {
+        font-family: 'Chango', cursive;
         font-size: 2vw;
         margin: 20px;
-        color: #080808;
+        color: black;
         font-weight: 700;
       }
     </style>
@@ -57,73 +69,119 @@
     <div class="container">
       <div class="item">
         <h1></h1>
-        <p>Click-O-Paint 🖌️</p>
+        <p>👩‍🎨 Click-o-Paint 👨‍🎨</p>
+        <h4>pinta y descarga tu creación con click secundario.</h4>
       </div>
       <canvas id="canvas-1" width="600" height="400"> </canvas>
     </div>
 
     <script>
+      // VARIABLES ------------------>
       var screen = document.querySelector("canvas");
       var brush = screen.getContext("2d");
+      var colorSampleSize = 50;
+      var draw = false;
 
       // canvas background ----------------->
       brush.fillStyle = "whitesmoke";
       brush.fillRect(0, 0, 600, 400);
 
       // colors to pick ------------------>
-      brush.fillStyle = "tomato";
+      brush.fillStyle = "PeachPuff";
       brush.fillRect(0, 0, 50, 50);
 
-      brush.fillStyle = "lightseagreen";
+      brush.fillStyle = "tomato";
       brush.fillRect(0, 50, 50, 50);
 
-      brush.fillStyle = "dodgerblue";
+      brush.fillStyle = "indigo";
       brush.fillRect(0, 100, 50, 50);
 
-      
+      brush.fillStyle = "lightseagreen";
+      brush.fillRect(0, 150, 50, 50);
 
-      var draw = false;
+      brush.fillStyle = "OliveDrab";
+      brush.fillRect(0, 200, 50, 50);
 
+      brush.fillStyle = "Teal";
+      brush.fillRect(0, 250, 50, 50);
+
+      brush.fillStyle = "Indigo";
+      brush.fillRect(0, 300, 50, 50);
+
+      brush.fillStyle = "black";
+      brush.fillRect(0, 350, 50, 50);
+
+      // FUNCTIONS ----------------->
       function drawCircle(event) {
         if (draw) {
-          var x = event.pageX - screen.offsetLeft;
-          var y = event.pageY - screen.offsetTop;
-          brush.fillStyle = "black";
+          var x = event.clientX - screen.offsetLeft;
+          var y = event.clientY - screen.offsetTop;
+          if (!((x < 50) && (x > 0) && (y < 400) && (y > 0))){
+          brush.fillStyle = chosenColor;
           brush.beginPath();
-          brush.arc(x, y, 2.5, 0, 2 * 3.14);
+          brush.arc(x, y, 3, 0, 2 * 3.14);
           brush.fill();
+          }
         }
-      }
+      };
       screen.onmousemove = drawCircle;
 
+      // mouse click functions -------------------->
       function activateDraw() {
         draw = true;
-      };
-
+      }
       function deactivateDraw() {
         draw = false;
-      };
+      }
 
       screen.onmousedown = activateDraw;
 
       screen.onmouseup = deactivateDraw;
 
+      // color selection from coords ------------------>
       function pickColor(event) {
-      var x = event.pageX - screen.offsetLeft;
-      var y = event.pageY - screen.offsetTop;
-      
-      if((x <= 50) && (y <= 50))
-        {brush.fillStyle = "tomato"}; // cambiar a color 'tomato'
+        var x = event.pageX - screen.offsetLeft;
+        var y = event.pageY - screen.offsetTop;
 
-      if ((x <= 50) && (y <= 100))
-        {brush.fillStyle = "lightseagreen"}; // cambiar a color 'lightseagreen'
+        if (x <= 50 && y <= 50) {
+          return (chosenColor = "PeachPuff");
+        } // cambiar a color 'PeachPuff'
 
-      if ((x <= 50) && (y <= 150))
-        {brush.fillStyle = "dodgerblue"}; // cambiar a color 'dodgerblue'
-    };
-  
-  screen.onclick = pickColor;
+        if (x <= 50 && y <= 100) {
+          return (chosenColor = "tomato");
+        } // cambiar a color 'tomato'
 
+        if (x <= 50 && y <= 150) {
+          return (chosenColor = "indigo");
+        } // cambiar a color 'indigo'
+
+        if (x <= 50 && y <= 200) {
+          return (chosenColor = "lightseagreen");
+        } // cambiar a color 'lightseagreen'
+
+        if (x <= 50 && y <= 250) {
+          return (chosenColor = "OliveDrab");
+        } // cambiar a color 'OliveDrab'
+
+        if (x <= 50 && y <= 300) {
+          return (chosenColor = "Teal");
+        } // cambiar a color 'Teal'
+
+        if (x <= 50 && y <= 350) {
+          return (chosenColor = "Indigo");
+        } // cambiar a color 'Indigo'
+
+        if (x <= 50 && y <= 400) {
+          return (chosenColor = "black");
+        } // cambiar a color 'black'
+      }
+
+      screen.onclick = pickColor;
+
+      brush.fillStyle = chosenColor;
+      brush.beginPath();
+      brush.arc(x, y, 3, 0, 2 * 3.14);
+      brush.fill();
     </script>
   </body>
 </html>
