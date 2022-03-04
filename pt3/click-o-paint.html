@@ -42,6 +42,12 @@
         border-radius: 5px;
       }
 
+      #colourInput {
+        position: relative;
+        top: 10px;
+        left: 10px;
+      }
+
       .item {
         text-align: center;
       }
@@ -73,6 +79,7 @@
         <h4>pinta y descarga tu creación con click secundario.</h4>
       </div>
       <canvas id="canvas-1" width="600" height="400"> </canvas>
+      <input type="color" id="colourInput" value="black" />
     </div>
 
     <script>
@@ -119,6 +126,7 @@
           if (!((x < 50) && (x > 0) && (y < 400) && (y > 0))){
           brush.fillStyle = chosenColor;
           brush.beginPath();
+          brush.lineWidth= 25;
           brush.arc(x, y, 3, 0, 2 * 3.14);
           brush.fill();
           }
